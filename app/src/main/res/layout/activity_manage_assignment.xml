@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".ManageAssignmentActivity">
+
+    <Button
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:text="Assignment Manager"
+        android:textSize="30sp"
+        android:textColor="@android:color/background_dark"
+        android:elevation="4dp"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="center_vertical|start"
+        android:paddingStart="30dp"
+        android:layout_marginBottom="14dp"
+        android:paddingEnd="16dp"/>
+
+    <!-- RecyclerView for the list of assignments -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:layout_above="@+id/fab"
+        android:layout_marginTop="8dp"
+        android:clipToPadding="false"
+        tools:listitem="@layout/assignment_item" />
+
+    <!-- Floating Action Button for adding new assignments -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        android:contentDescription="Add Assignment"
+        app:srcCompat="@android:drawable/ic_input_add"
+        android:tint="@android:color/white" />
+
+</RelativeLayout>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/signup">
+
+    <!-- TextView for Sign Up -->
+    <TextView
+        android:id="@+id/SignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:layout_marginTop="18dp"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:textColor="#08ED11"
+        android:fontFamily="@font/roboto_bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="24dp"/>
+
+
+    <!-- Username EditText -->
+    <EditText
+        android:id="@+id/editUsername"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:drawablePadding="20dp"
+        android:fontFamily="@font/roboto_regular"
+        android:hint="Full Name"
+        android:padding="10dp"
+        android:textColor="@color/dark_text"
+        android:textColorHint="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.28"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/SignUp"
+        app:layout_constraintWidth_percent="0.8" />
+
+    <!-- Email EditText -->
+    <EditText
+        android:id="@+id/editEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/roboto_regular"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:padding="12dp"
+        android:textColor="@color/dark_text"
+        android:textColorHint="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.28"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editUsername"
+        app:layout_constraintWidth_percent="0.8" />
+
+    <!-- Phone Number EditText -->
+    <EditText
+        android:id="@+id/editMobileNumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:drawablePadding="20dp"
+        android:fontFamily="@font/roboto_regular"
+        android:hint="Mobile Number"
+        android:padding="10dp"
+        android:inputType="phone"
+        android:textColor="@color/dark_text"
+        android:textColorHint="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.28"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editEmail"
+        app:layout_constraintWidth_percent="0.8" />
+
+    <!-- Password EditText with Toggle Button -->
+    <EditText
+        android:id="@+id/editPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/roboto_regular"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:padding="12dp"
+        android:textColor="@color/dark_text"
+        android:textColorHint="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@id/btnTogglePassword"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editMobileNumber"
+        app:layout_constraintWidth_percent="0.75" />
+
+    <ImageButton
+        android:id="@+id/btnTogglePassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_visibility_off"
+        android:contentDescription="Toggle password visibility"
+        android:background="?attr/selectableItemBackground"
+        app:layout_constraintTop_toTopOf="@id/editPassword"
+        app:layout_constraintBottom_toBottomOf="@id/editPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/editPassword"
+        android:layout_marginStart="8dp"/>
+
+    <!-- Confirm Password EditText with Toggle Button -->
+    <EditText
+        android:id="@+id/editConfirmPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/roboto_regular"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:padding="12dp"
+        android:textColor="@color/dark_text"
+        android:textColorHint="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@id/btnToggleConfirmPassword"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editPassword"
+        app:layout_constraintWidth_percent="0.75" />
+
+    <ImageButton
+        android:id="@+id/btnToggleConfirmPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_visibility_off"
+        android:contentDescription="Toggle confirm password visibility"
+        android:background="?attr/selectableItemBackground"
+        app:layout_constraintTop_toTopOf="@id/editConfirmPassword"
+        app:layout_constraintBottom_toBottomOf="@id/editConfirmPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/editConfirmPassword"
+        android:layout_marginStart="8dp"/>
+
+    <!-- Terms and Conditions CheckBox -->
+    <CheckBox
+        android:id="@+id/checkboxTerms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="I agree to the Terms and Conditions"
+        android:textColor="@color/white"
+        android:fontFamily="@font/roboto_regular"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editConfirmPassword"
+        android:layout_marginTop="16dp" />
+
+    <!-- Sign Up Button -->
+    <Button
+        android:id="@+id/btnSignUp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:textColor="@color/black"
+        android:padding="12dp"
+        android:textSize="18sp"
+        android:fontFamily="@font/roboto_bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/checkboxTerms"
+        android:layout_marginTop="24dp"/>
+
+    <TextView
+        android:id="@+id/Login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Have an Account ? Login"
+        android:textSize="15dp"
+        android:textColor="#fff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSignUp"
+        android:layout_marginTop="14dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

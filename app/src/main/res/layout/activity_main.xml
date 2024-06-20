@@ -1,0 +1,55 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/loginpage" >
+
+    <!-- TextView for displaying the application name -->
+    <TextView
+        android:id="@+id/appName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:fontFamily="@font/roboto_regular"
+        android:text="ASSIGNMENT GENIUS"
+        android:layout_marginTop="50dp"
+        android:textColor="@color/white"
+        android:padding="0dp"
+        android:textSize="36dp"
+        android:textStyle="bold" />
+
+    <!-- ImageView for displaying a header image -->
+    <ImageView
+        android:id="@+id/headerImage"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:layout_below="@id/appName"
+        android:src="@drawable/homepagepic"
+        android:layout_marginTop="60dp" />
+
+    <!-- Button for starting a new activity for new users -->
+    <Button
+        android:id="@+id/getStartedBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Get Started"
+        android:textSize="20dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginTop="180dp"
+        android:layout_below="@id/headerImage" />
+
+    <!-- Button for logging in for existing users -->
+    <Button
+        android:id="@+id/loginBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/getStartedBtn" />
+
+</RelativeLayout>
