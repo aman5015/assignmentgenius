@@ -3,11 +3,12 @@
     <string name="app_logo_description">Assignment Genius</string>
     <string name="app_description">Assignment Genius helps students stay organized and productive by managing assignments efficiently. Create, track, and prioritize your assignments with ease. Set reminders to stay on top of deadlines. Access study materials directly from the app to enhance your learning experience. Stay focused and excel in your studies with Assignment Genius.</string>
     <string name="app_version">2024.6.18.17</string>
-    <string name="phone_number">+91 9765497765</string>
+    <string name="phone_number">+91 9568675015</string>
     <string name="email_address">assignmentgenius1709@gmail.com</string>
     <string name="twitter_logo_description">Twitter</string>
     <string name="facebook_logo_description">https://www.facebook.com</string>
     <string name="instagram_logo_description">https://www.instagram.com</string>
     <string name="profile_picture_desc">Profile Picture</string>
+    <string name="menu_options">Menu Options</string>
 
 </resources>

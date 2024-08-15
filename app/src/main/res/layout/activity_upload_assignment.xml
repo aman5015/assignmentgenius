@@ -39,6 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter assignment title"
+            android:textColor="@color/black"
             android:background="@drawable/rounded_edittext"
             android:padding="12dp"
             android:layout_marginBottom="16dp" />
@@ -60,6 +61,7 @@
             android:hint="Enter assignment description"
             android:background="@drawable/rounded_edittext"
             android:padding="12dp"
+            android:textColor="@color/black"
             android:minLines="4"
             android:gravity="top"
             android:layout_marginBottom="16dp" />
@@ -141,6 +143,6 @@
             android:text="View Previous Assignments"
             android:background="@drawable/rounded_button_accent"
             android:textColor="#ffffff"
-            android:layout_marginTop="24dp" />
+            android:layout_marginTop="40dp" />
     </LinearLayout>
 </ScrollView>

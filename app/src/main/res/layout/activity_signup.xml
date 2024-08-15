@@ -2,10 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:background="@drawable/signup">
+    android:background="@color/white" >
 
     <!-- TextView for Sign Up -->
     <TextView
@@ -17,7 +18,7 @@
         android:textSize="40sp"
         android:textStyle="bold"
         android:textColor="#08ED11"
-        android:fontFamily="@font/roboto_bold"
+        android:fontFamily="@font/quaaykop"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,10 +31,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:drawablePadding="20dp"
         android:fontFamily="@font/roboto_regular"
         android:hint="Full Name"
         android:padding="10dp"
+        android:drawablePadding="12dp"
+        android:drawableLeft="@drawable/ic_user"
         android:textColor="@color/dark_text"
         android:textColorHint="@color/black"
         android:textSize="16sp"
@@ -49,9 +51,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:drawablePadding="10dp"
+        android:drawablePadding="12dp"
         android:fontFamily="@font/roboto_regular"
         android:hint="Email"
+        android:drawableLeft="@drawable/ic_mail"
         android:inputType="textEmailAddress"
         android:padding="12dp"
         android:textColor="@color/dark_text"
@@ -69,7 +72,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:drawablePadding="20dp"
+        android:drawablePadding="12dp"
+        android:drawableLeft="@drawable/ic_phone_call"
         android:fontFamily="@font/roboto_regular"
         android:hint="Mobile Number"
         android:padding="10dp"
@@ -89,9 +93,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:drawablePadding="10dp"
+        android:drawablePadding="12dp"
         android:fontFamily="@font/roboto_regular"
         android:hint="Password"
+        android:drawableLeft="@drawable/ic_lock"
         android:inputType="textPassword"
         android:padding="12dp"
         android:textColor="@color/dark_text"
@@ -121,9 +126,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:drawablePadding="10dp"
+        android:drawablePadding="12dp"
         android:fontFamily="@font/roboto_regular"
         android:hint="Confirm Password"
+        android:drawableLeft="@drawable/ic_lock"
         android:inputType="textPassword"
         android:padding="12dp"
         android:textColor="@color/dark_text"
@@ -153,26 +159,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="I agree to the Terms and Conditions"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:fontFamily="@font/roboto_regular"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/editConfirmPassword"
         android:layout_marginTop="16dp" />
 
     <!-- Sign Up Button -->
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnSignUp"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="325dp"
+        android:layout_height="57dp"
         android:text="Sign Up"
-        android:textColor="@color/black"
-        android:padding="12dp"
-        android:textSize="18sp"
-        android:fontFamily="@font/roboto_bold"
+        android:background="@drawable/getstartedbutton"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/opensansregular"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/checkboxTerms"
-        android:layout_marginTop="24dp"/>
+        android:layout_marginTop="32dp"/>
 
     <TextView
         android:id="@+id/Login"
@@ -180,9 +188,23 @@
         android:layout_height="wrap_content"
         android:text="Have an Account ? Login"
         android:textSize="15dp"
-        android:textColor="#fff"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnSignUp"
         android:layout_marginTop="14dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:text="Designed by\n Paurush"
+        android:textColor="@color/black"
+        android:textSize="22dp"
+        android:fontFamily="@font/quaaykop"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -29,7 +29,7 @@ public class LoginActivity extends AppCompatActivity {
         editEmail = findViewById(R.id.editEmail);
         editPassword = findViewById(R.id.editPassword);
         btnLogin = findViewById(R.id.btnLogin);
-        Signup = findViewById(R.id.SignUp); // Fixed initialization
+        Signup = findViewById(R.id.SignUp);
         ForgotPassword = findViewById(R.id.ForgotPassword);
         btnTogglePassword = findViewById(R.id.btnTogglePassword);
 
@@ -37,8 +37,7 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this , MenuActivity.class);
-                startActivity(intent);
+                login();
             }
         });
 
@@ -110,6 +109,8 @@ public class LoginActivity extends AppCompatActivity {
         // Simulated login process, replace with actual authentication logic
         Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show();
 
-        // Proceed with your login process here
+        // Navigate to MenuActivity upon successful login
+        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+        startActivity(intent);
     }
 }

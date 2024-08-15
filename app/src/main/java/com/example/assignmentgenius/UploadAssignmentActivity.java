@@ -1,8 +1,5 @@
 package com.example.assignmentgenius;
 
-// Inside your activity class
-
-// Import necessary packages
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
@@ -23,6 +20,7 @@ public class UploadAssignmentActivity extends Activity {
     private TextView tvSolutionPreview;
     private Uri assignmentUri;
     private Uri solutionUri;
+    Button btnViewPrevious;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,11 +64,13 @@ public class UploadAssignmentActivity extends Activity {
             }
         });
 
-        Button btnViewPrevious = findViewById(R.id.btnViewPrevious);
+        btnViewPrevious= findViewById(R.id.btnViewPrevious);
         btnViewPrevious.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                viewPreviousAssignments();
+                // Create an Intent to start LoginActivity
+                Intent intent = new Intent(UploadAssignmentActivity.this, ViewPreviousAssignmentsActivity.class);
+                startActivity(intent);
             }
         });
     }
@@ -90,12 +90,31 @@ public class UploadAssignmentActivity extends Activity {
                 if (requestCode == REQUEST_CODE_ASSIGNMENT) {
                     assignmentUri = uri;
                     tvAssignmentPreview.setText("Assignment: " + uri.getLastPathSegment());
+                    tvAssignmentPreview.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            openFile(uri);
+                        }
+                    });
                 } else if (requestCode == REQUEST_CODE_SOLUTION) {
                     solutionUri = uri;
                     tvSolutionPreview.setText("Solution: " + uri.getLastPathSegment());
+                    tvSolutionPreview.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            openFile(uri);
+                        }
+                    });
                 }
             }
         }
+    }
+
+    private void openFile(Uri uri) {
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setDataAndType(uri, "application/pdf");
+        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        startActivity(intent);
     }
 
     private void submitAssignment() {
@@ -107,20 +126,14 @@ public class UploadAssignmentActivity extends Activity {
             return;
         }
 
-        // Logic to handle the submitted assignment and solution
         Toast.makeText(this, "Assignment submitted successfully!", Toast.LENGTH_SHORT).show();
-        // Add actual submission logic here
+        clearFields();
+    }
 
-        // Clear fields and reset previews
+    private void clearFields() {
         etAssignmentTitle.setText("");
         etAssignmentDescription.setText("");
         tvAssignmentPreview.setText("No assignment uploaded");
         tvSolutionPreview.setText("No solution uploaded");
-    }
-
-    private void viewPreviousAssignments() {
-        // Logic to view previous assignments
-        Toast.makeText(this, "Displaying previous assignments...", Toast.LENGTH_SHORT).show();
-        // Add actual logic to view previous assignments here
     }
 }

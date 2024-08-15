@@ -1,50 +1,41 @@
-// ManageAssignmentActivity.java
 package com.example.assignmentgenius;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
+import android.widget.ImageView;
+import android.widget.PopupMenu;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.example.assignmentgenius.Adapter.ManageAssignmentAdapter;
+import com.example.assignmentgenius.Model.ManageAssignment;
 
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.List;
 
 public class ManageAssignmentActivity extends AppCompatActivity {
-
-    private RecyclerView recyclerView;
-    private AssignmentAdapter adapter;
-    private ArrayList<Assignment> assignmentList;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manage_assignment);
 
-        recyclerView = findViewById(R.id.recyclerView);
-        FloatingActionButton fab = findViewById(R.id.fab);
-
-        assignmentList = new ArrayList<>();
-        adapter = new AssignmentAdapter(assignmentList, this); // Pass context to adapter
+        // Initialize RecyclerView
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        // Create dummy data
+        List<ManageAssignment> dummyAssignments = new ArrayList<>();
+        dummyAssignments.add(new ManageAssignment("Maths Assignment 1", "Discrete Strucuture", "2024-08-01", "14:00"));
+        dummyAssignments.add(new ManageAssignment("Java Assignment 1", "OOPs using Java", "2024-08-10", "16:30"));
+        dummyAssignments.add(new ManageAssignment("Maths Assignment 2", "Discrete Strucuture", "2024-08-01", "14:00"));
+        dummyAssignments.add(new ManageAssignment("Java Assignment 2", "OOPs using Java", "2024-08-10", "16:30"));
+
+        // Set up the adapter
+        ManageAssignmentAdapter adapter = new ManageAssignmentAdapter(dummyAssignments);
         recyclerView.setAdapter(adapter);
 
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Add new assignment - For testing, add a dummy assignment
-                addDummyAssignment();
-            }
-        });
-    }
-
-    private void addDummyAssignment() {
-        assignmentList.add(new Assignment("Your Assignment", new Date(), "https://www.instagram.com"));
-        adapter.notifyDataSetChanged();
-        Toast.makeText(this, "New assignment added", Toast.LENGTH_SHORT).show();
     }
 }

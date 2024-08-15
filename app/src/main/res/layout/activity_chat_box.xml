@@ -1,98 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/chatboxLayout"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".ChatBoxActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
 
-    <!-- Toolbar -->
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/chatToolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        android:titleTextColor="@android:color/white"
-        android:subtitleTextColor="@android:color/white"
-        tools:title="Chat"
-        tools:subtitle="Online">
-
-        <!-- Video Call Button -->
-        <ImageButton
-            android:id="@+id/videoCallButton"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_gravity="end"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/ic_videocam"
-            android:tint="@android:color/white"
-            android:contentDescription="Video Call" />
-
-        <!-- Voice Call Button -->
-        <ImageButton
-            android:id="@+id/voiceCallButton"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_toStartOf="@id/videoCallButton"
-            android:layout_marginEnd="16dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/ic_call"
-            android:tint="@android:color/white"
-            android:contentDescription="Voice Call" />
-    </androidx.appcompat.widget.Toolbar>
-
-    <!-- RecyclerView for Messages -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewMessages"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/chatToolbar"
-        android:padding="8dp"
-        android:scrollbars="vertical" />
-
-    <!-- Input and Action Layout -->
-    <LinearLayout
-        android:id="@+id/messageInputLayout"
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal"
-        android:padding="8dp"
-        android:background="@android:color/white"
-        android:elevation="4dp">
+        android:text="Coming Soon !!"
+        android:textSize="48dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/indulta"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- Multimedia Button -->
-        <ImageButton
-            android:id="@+id/btnMultimedia"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:src="@drawable/ic_add_circle"
-            android:tint="@color/colorAccent"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Add Multimedia" />
-
-        <!-- Input Text Field -->
-        <EditText
-            android:id="@+id/inputMessage"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="Type a message"
-            android:inputType="text"
-            android:padding="8dp"
-            android:background="@drawable/rounded_edittext" />
-
-        <!-- Send Button -->
-        <ImageButton
-            android:id="@+id/btnSend"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:src="@drawable/ic_send"
-            android:tint="@color/colorPrimary"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Send Message" />
-    </LinearLayout>
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

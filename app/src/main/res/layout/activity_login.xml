@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/loginpage"
+    android:background="@color/white"
     android:paddingStart="16dp"
     android:paddingTop="32dp"
     android:paddingEnd="16dp"
@@ -16,27 +16,29 @@
         android:id="@+id/Login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Log In"
-        android:textColor="@color/white"
-        android:textSize="40sp"
+        android:layout_marginTop="55dp"
+        android:fontFamily="@font/quaaykop"
+        android:text="Login To Your Account"
+        android:textColor="#0AEC13"
+        android:textSize="38sp"
         android:textStyle="bold"
-        android:layout_marginTop="80dp"
-        android:layout_marginBottom="32dp"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Email EditText -->
     <EditText
         android:id="@+id/editEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="48dp"
+        android:drawableLeft="@drawable/ic_mail"
         android:fontFamily="@font/roboto_regular"
         android:hint="Email"
         android:padding="12dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
+        android:drawablePadding="12dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,12 +53,14 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:drawableLeft="@drawable/ic_lock"
         android:fontFamily="@font/roboto_regular"
         android:hint="Password"
         android:inputType="textPassword"
         android:padding="12dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
+        android:drawablePadding="12dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@id/btnTogglePassword"
         app:layout_constraintHorizontal_bias="0.426"
@@ -68,40 +72,41 @@
         android:id="@+id/btnTogglePassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_visibility_off"
-        android:contentDescription="Toggle password visibility"
         android:background="?attr/selectableItemBackground"
-        app:layout_constraintTop_toTopOf="@+id/editPassword"
+        android:contentDescription="Toggle password visibility"
+        android:src="@drawable/ic_visibility_off"
         app:layout_constraintBottom_toBottomOf="@+id/editPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="8dp" />
+        app:layout_constraintTop_toTopOf="@+id/editPassword" />
 
     <!-- Forgot Password TextView -->
     <TextView
         android:id="@+id/ForgotPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
         android:text="Forgot Password?"
-        android:textColor="#fff"
+        android:textColor="@color/black"
         android:textSize="14sp"
-        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/editPassword" />
 
     <!-- Login Button -->
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnLogin"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="325dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="46dp"
+        android:background="@drawable/getstartedbutton"
+        android:fontFamily="@font/opensansregular"
+        android:textStyle="bold"
         android:text="Login"
-        android:textColor="@color/black"
-        android:padding="16dp"
-        android:textSize="18sp"
-        android:fontFamily="@font/roboto_bold"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ForgotPassword"
-        android:layout_marginTop="24dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ForgotPassword" />
 
     <!-- Signup TextView -->
     <TextView
@@ -109,12 +114,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Don't have an account? Sign Up"
-        android:textColor="#fff"
+        android:textColor="@color/black"
         android:textSize="14sp"
         android:layout_marginTop="14dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnLogin" />
 
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Designed by \n Paurush"
+        android:gravity="center"
+        android:fontFamily="@font/quaaykop"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

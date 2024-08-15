@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "585676757817",
+    "project_id": "assignment-genius",
+    "storage_bucket": "assignment-genius.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:585676757817:android:57803dbf538a20ee5e66e8",
+        "android_client_info": {
+          "package_name": "com.example.assignmentgenius"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFr-S56bLDB2YpEML3hHyOGhZ5WK3PoSk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

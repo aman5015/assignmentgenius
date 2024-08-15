@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.assignmentgenius">
-
     <!-- Required Permissions -->
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -10,9 +9,9 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
-
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -22,16 +21,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AssignmentGenius"
         tools:targetApi="31">
-
-        <!-- Activities Declarations -->
+        <activity
+            android:name=".ViewPreviousAssignmentsActivity"
+            android:exported="false" />
         <activity
             android:name=".AboutActivity"
             android:exported="false" />
         <activity
             android:name=".SettingActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ProfileActivity"
             android:exported="false" />
         <activity
             android:name=".AssignmentDoerActivity"
@@ -42,38 +39,31 @@
         <activity
             android:name=".ManageAssignmentActivity"
             android:exported="false" />
+
         <activity
             android:name=".UploadAssignmentActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MenuActivity"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
             android:name=".SignupActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
+        <activity
+            android:name=".StartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Splash_Screen"
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <!-- Reminder Receiver -->
-        <receiver
-            android:name=".ReminderReceiver"
-            android:enabled="true"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="com.example.assignmentgenius.REMINDER_ACTION" />
-            </intent-filter>
-        </receiver>
 
     </application>
 

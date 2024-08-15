@@ -1,55 +1,151 @@
-<RelativeLayout
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/loginpage" >
+    android:background="@color/white"
+    android:padding="16dp">
 
-    <!-- TextView for displaying the application name -->
     <TextView
-        android:id="@+id/appName"
-        android:layout_width="match_parent"
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:fontFamily="@font/roboto_regular"
-        android:text="ASSIGNMENT GENIUS"
-        android:layout_marginTop="50dp"
-        android:textColor="@color/white"
-        android:padding="0dp"
-        android:textSize="36dp"
-        android:textStyle="bold" />
+        android:text="Assignment Genius"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/adeela"
+        android:textColor="#6A1AF8"
+        android:textAlignment="center"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="22dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- ImageView for displaying a header image -->
-    <ImageView
-        android:id="@+id/headerImage"
-        android:layout_width="match_parent"
-        android:layout_height="280dp"
-        android:layout_below="@id/appName"
-        android:src="@drawable/homepagepic"
-        android:layout_marginTop="60dp" />
-
-    <!-- Button for starting a new activity for new users -->
-    <Button
-        android:id="@+id/getStartedBtn"
-        android:layout_width="match_parent"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Get Started"
-        android:textSize="20dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginTop="180dp"
-        android:layout_below="@id/headerImage" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
 
-    <!-- Button for logging in for existing users -->
-    <Button
-        android:id="@+id/loginBtn"
-        android:layout_width="match_parent"
+    <!-- Upload Assignment Button -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnUploadAssignment"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/greenbutton"
+        android:fontFamily="@font/indulta"
+        android:text="Upload \nAssignment"
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+    <!-- Manage Assignments Button -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnManageAssignment"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/greenbutton"
+        android:fontFamily="@font/indulta"
+        android:text="Manage \nAssignment"
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+    <!-- Chatbox Button -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnChatbox"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/greenbutton"
+        android:fontFamily="@font/indulta"
+        android:text="Chatbox"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnUploadAssignment" />
+
+    <!-- Assignment Doer Button -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnAssignmentDoer"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/greenbutton"
+        android:fontFamily="@font/indulta"
+        android:text="Assignment \nDoer"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/btnManageAssignment" />
+
+    <!-- Settings Button -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSettings"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/greenbutton"
+        android:fontFamily="@font/indulta"
+        android:text="Settings"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnChatbox" />
+
+    <!-- About Button -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnAbout"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/greenbutton"
+        android:fontFamily="@font/indulta"
+        android:text="About"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/btnAssignmentDoer" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
-        android:textSize="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/getStartedBtn" />
+        android:layout_marginBottom="16dp"
+        android:text="Designed by \n Paurush"
+        android:fontFamily="@font/quaaykop"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
